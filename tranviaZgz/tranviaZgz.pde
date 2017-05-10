@@ -1,11 +1,10 @@
-String[] lines = loadStrings("http://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/tranvia.json"); //http://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/tranvia?rf=json&results_only=true&srsname=utm30n");
+String url="http://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/tranvia.json"; 
+String parada = "CAMPUS RIO EBRO";
 
 JSONObject json;
 
-json = loadJSONObject("http://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/tranvia.json"); 
+json = loadJSONObject(url); 
 JSONArray results = json.getJSONArray("result");
-
-String parada = "CAMPUS RIO EBRO";
 
 for (int i = 0; i < results.size(); i++) {
     String miParada = results.getJSONObject(i).getString("title");
